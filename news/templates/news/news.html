@@ -1,0 +1,37 @@
+{% extends 'todo/base.html' %}
+{% block title %}<title>ToDo</title>{% endblock title %}
+
+{% block content %}
+    <center>
+    <div class="custom-container">
+    <h2>Todo Tasks</h2>
+    {% if news %}
+        {% for i in news %}
+        <div class="custom-alert" style="background-color: {{ i.color }}">
+            <div class="custom-task">
+                <input type="checkbox" id="{{ i.id }}" class="custom-task-checkbox">
+                <label for="{{ i.id }}" class="custom-task-label">{{ i.name_task }}</label>
+            </div>
+            <div class="custom-task-details">
+                <p class="custom-task-text">{{ i.task_txt }}</p>
+                <h9>{{ i.date }}</h9>
+            </div>
+            <a href="{% url 'new-details' i.id %}" class="custom-edit-link">
+                <i class="fas fa-pen"></i>
+            </a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>You don't have any tasks!</p>
+    {% endif %}
+      <div class="custom-add-task">
+        <a href="{% url 'create' %}">
+            <button class="custom-add-task-btn" id="custom-add-task-btn" style="background-color: #0d6efd">
+                Add +
+            </button>
+        </a>
+      </div>
+    </div>
+    </center>
+
+{% endblock content %}

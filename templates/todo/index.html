@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+{% block title %} <title>Home Page</title> {% endblock title %}
+
+{% block content %}
+    <center>
+        <div class="container">
+            <h3 class="welcome-heading">Welcome to ToDo website</h3>
+            <a href="{% url 'news_home' %}">
+                <button class="go-button">Let's Go</button>
+            </a>
+        </div>
+    </center>
+
+{% endblock content %}

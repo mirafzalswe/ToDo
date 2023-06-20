@@ -1,0 +1,22 @@
+{% extends 'todo/base.html' %}
+{% block title %} <title>item</title> {% endblock title %}
+
+
+{% block content %}
+    <center>
+    <div class="features">
+            <h1>{{ todo.name_task }}</h1>
+            <p>{{ todo.task_txt }}</p>
+            <p>{{ todo.date }}</p>
+            <a href="{% url 'new-delete' todo.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'new-update' todo.id %}" class="btn btn-info">Update</a>
+    </div>
+    </center>
+    <style>
+    .features{
+        max-width: 600px;
+    }
+
+    </style>
+{% endblock content %}
+

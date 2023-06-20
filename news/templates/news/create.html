@@ -1,0 +1,21 @@
+{% extends 'todo/base.html' %}
+{% block title %} <title>Add Tasks</title> {% endblock title %}
+
+
+{% block content %}
+    <center>
+    <div class="features">
+        <h2>You should add task</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.name_task }}<br>
+            {{ form.task_txt }}<br>
+            {{ form.date}}<br>
+            <span>{{ error }}</span>
+{#            <a href="/news" class="btn btn-success" style="background-color:#0d6efd" type="submit">Add</a>#}
+            <button class="btn btn-success" style="background-color: #0d6efd" type="submit">Add</button>
+        </form>
+    </div>
+    </center>
+{% endblock content %}
+

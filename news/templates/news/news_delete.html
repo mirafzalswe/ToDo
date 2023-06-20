@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+{% block title %} <title>Delete Task</title> {% endblock title %}
+
+
+{% block content %}
+    <center>
+    <div class="features">
+        <h2>Delete Task</h2>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" style="background-color: #0d6efd" type="submit">Delete</button>
+        </form>
+    </div>
+    </center>
+{% endblock content %}
+
